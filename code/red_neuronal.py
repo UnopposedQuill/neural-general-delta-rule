@@ -71,7 +71,7 @@ class Red:
                 delta = np.atleast_2d(deltas[i])
                 self.pesos[i] += tasa_aprendizaje * capa.T.dot(delta)
  
-            if iteracion % 10000 == 0: print('Iteraciones: ', iteracion)
+            if iteracion % 500 == 0: print('Iteraciones: ', iteracion)
  
     """
         Método que se encarga de predecir un resultado dada una entrada.

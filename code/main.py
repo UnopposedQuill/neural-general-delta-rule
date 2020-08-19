@@ -83,11 +83,19 @@ def main():
 		[0.121, 0.231],
 		[0.1212, -1],
 		[0.6611, 0.13619]])
+
+	diferenciaTotal = 0
+	numeroValores = 0
 	
 	print("\n\nVALORES ESTIMADOS PARA DATOS DESCONOCIDOS:")
 	for nuevo in nuevos:
 		estimado = red_neuronal.estimar(nuevo)
 		print("Valor de x: " + str(nuevo[0]) + ", valor de y: " + str(nuevo[1]) + "\t| valor real = " + str (nuevo[0] * nuevo[1]) + " - estimado: " + str(estimado[0]))
-	print("\n\n")
+
+		numeroValores += 1
+		diferenciaTotal += (nuevo[0] * nuevo[1]) - estimado[0]
+
+	print("\n")
+	print("Promedio de diferencia: " + str (diferenciaTotal / numeroValores))
 
 main()
